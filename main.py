@@ -15,9 +15,10 @@ app.add_middleware(
 )
 
 def is_armstrong(n: int) -> bool:
-    num_str = str(n)
+    num_str = str(abs(n))  # Use abs() to remove the negative sign
     num_digits = len(num_str)
-    return sum(int(digit) ** num_digits for digit in num_str) == n
+    return sum(int(digit) ** num_digits for digit in num_str) == abs(n)
+
 
 def is_prime(n: int) -> bool:
     # if n < 2:
